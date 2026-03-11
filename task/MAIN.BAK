@@ -1,0 +1,30 @@
+#include <iostream.h>
+#include <stdlib.h>
+#include "scheduler.h"
+
+int main(int argc,char* argv[])
+{
+    int workers=4;
+
+    if(argc>2)
+    {
+        if(strcmp(argv[1],"--workers")==0)
+            workers=atoi(argv[2]);
+    }
+
+    Scheduler s;
+
+    s.loadTasks("example_tasks.json");
+
+    s.buildGraph();
+
+    s.initWorkers(workers);
+
+    s.run();
+
+    s.printReport();
+
+    s.exportDOT();
+
+    return 0;
+}

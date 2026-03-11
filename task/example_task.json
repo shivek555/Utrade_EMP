@@ -1,0 +1,8 @@
+{
+"tasks":[
+{"id":"A","name":"Fetch","priority":2,"depends_on":[],"duration_ms":1000},
+{"id":"B","name":"Transform","priority":1,"depends_on":["A"],"duration_ms":800},
+{"id":"C","name":"Load","priority":3,"depends_on":["A"],"duration_ms":600},
+{"id":"D","name":"Report","priority":2,"depends_on":["B","C"],"duration_ms":700}
+]
+}
